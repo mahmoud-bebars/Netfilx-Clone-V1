@@ -3,6 +3,8 @@ const path = require("path");
 
 let initial_path = path.join(__dirname, "public");
 
+const port = process.env.PORT || 3000
+
 let app = express();
 app.use(express.static(initial_path));
 
@@ -18,6 +20,6 @@ app.use((req, res) => {
   res.json("404");
 });
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(port, () => {
   console.log("listening on port 3000 from http://localhost:3000");
 });
